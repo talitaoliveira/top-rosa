@@ -1,0 +1,290 @@
+@import 'reset';
+@import 'variables';
+@import 'fonts';
+
+/* -------------------------
+        Geral
+--------------------------- */
+*{
+    box-sizing: border-box;
+  }
+body {
+    font-family: 'Montserrat';
+}
+// header
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: $terceiraCor;
+    color: $primeiraCor;
+    height: 55px;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.header h1{
+    font-size: 1.2em;
+}
+.header__nav{
+    width: 70%;
+    background-color: $primeiraCor;
+    height: 100vh;
+    top: 55px;
+    padding-right: 1em;
+    text-transform: uppercase;
+    transition: left .5s;
+    left:-100%;
+    position: absolute;
+    border-right: 1px solid $segundaCor;
+}
+.nav__list{
+    display: flex;
+    align-items: flex-start;
+}
+.nav__list-item{
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid $segundaCor;
+    text-align: left;
+}
+.nav__list-item a{
+    text-decoration: none;
+    color: $terceiraCor;
+}
+// nav
+
+
+
+/* -------------------------
+  Icon Menu - Mobile
+--------------------------- */
+.icon-menu{
+    cursor: pointer;
+    width: 35px;
+    height: 15px;
+    display: block;
+    z-index: 1;
+    margin-top: 10px;
+  }
+  
+  .icon-menu span, .icon-menu span:before, .icon-menu span:after{
+    width: 30px;
+    height: 5px;
+    background: $primeiraCor;
+    display: block;
+    content: '';
+    position: absolute;
+    transition: all 500ms ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .icon-menu span:after{
+    top: -10px;
+  }
+  .icon-menu span:before{
+    top: 10px;
+  }
+  .icon-menu.active span:before, .icon-menu.active span:after{
+    top: 0;
+  }
+  .icon-menu.active span{
+    background-color: transparent;
+  }
+  .icon-menu.active span:before{
+    transform: rotate(-45deg);
+  }
+  .icon-menu.active span:after{
+    transform: rotate(45deg);
+  }
+
+  .menu-list ul{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 10px;
+    flex-grow: .5;
+  }
+  .show {
+    left: 0;
+  }
+
+// Main
+.main__section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+.main__section h2{
+    font-size: 2em;
+    margin-top: 1em;
+    flex-grow: 1;
+}
+.main__section p{
+    text-align: center;
+}
+
+.main__section--home{
+    background-color: $primeiraCor;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main__section--home img{
+    width: 90%;
+}
+
+
+.main__section--quem-somos{
+    background-color: $segundaCor;
+    height: 80vh;
+    color: $primeiraCor;
+}
+.main__section--quem-somos p{
+    flex-grow: 2;
+    line-height: 2em;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.main__section--nosso-instagram{
+    background-color: $primeiraCor;
+    color: $segundaCor;
+}
+.main__section--nosso-instagram h2{
+    font-size: 1.2em;
+    margin-top: 1em;
+    flex-grow: 1;
+    margin-bottom: 1em;
+    text-align: center;
+    line-height: 1.5em;
+}
+.main__section--nosso-instagram iframe{
+    width: 80vw;
+    max-width: 600px;
+    height: -webkit-fill-available;
+}
+
+.main__section--redes-sociais{
+    background-color: $terceiraCor;
+    height: 30vh;
+    color: $primeiraCor;
+}
+
+.block__social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+}
+.block__social a i{
+    font-size: 3em;
+    padding: 20px;
+    color: $primeiraCor;
+}
+.block__social i:hover{
+    color: $segundaCor;
+    font-size: 3em;
+    padding: 20px;
+}
+
+footer{
+    background-color: $primeiraCor;
+    text-align: center;
+    margin: 10px 0;
+    font-size: .7em;
+}
+
+
+/* ----- Telefones em paisagem a tablet em retrato ----- */
+@media (max-width: 767px) {
+    /* ----- estilos aqui ----- */
+    .main__section--home img{
+        max-width: 350px;
+    }
+}
+// DESSE TAMANHO EM DIANTE
+@media (min-width: 768px) {
+    .icon-menu{
+        display: none;
+    }
+    // .main__section--quem-somos{
+    //     margin-top: 74px;
+    // }
+    .header__nav{
+        left: 0;
+        background: transparent;
+        border: none;
+        position: absolute;
+        height: initial;
+        top: 0;
+    }
+    .menu-list ul{
+        flex-direction: row;
+        padding: 0;
+    }
+    .nav__list-item{
+        width: initial;
+        border: none;
+    }
+    .nav__list-item a{
+        color: $primeiraCor;
+        text-align: center;
+        padding: 20px 30px;
+    }
+    .destaque-item-menu{
+        background-color: $segundaCor;
+    }
+}
+
+
+
+/* ----- Tablet em retrato a paisagem e desktop ----- */
+@media (min-width: 768px) and (max-width: 979px) {
+    /* ----- estilos aqui ----- */
+    .main__section--home img{
+        max-width: 400px;
+        margin-top: 50px;
+    }
+}
+@media only screen 
+and (min-device-width : 1024px) 
+and (max-device-width : 1366px) {
+
+    .main__section--home img{
+        max-width: 400px;
+        margin-top: 70px;
+    }
+
+}
+/* ----- Ipad e tela de retina ----- */
+@media (min-width: 980px) and (max-width: 1024px) {
+    /* ----- estilos aqui ----- */
+    .main__section--home img{
+        max-width: 400px;
+        margin-top: 70px;
+    }
+
+    // .main__section--nosso-instagram iframe{
+    //     width: 600px;
+    //     height: -webkit-fill-available;
+    // }
+}
+/* ----- Desktop grande ----- */
+@media (min-width: 1024px) {
+    /* ----- estilos aqui ----- */
+    .main__section--home img{
+        max-width: 400px;
+        margin-top: 70px;
+    }
+
+    // .main__section--nosso-instagram iframe{
+    //     width: 600px;
+    //     height: -webkit-fill-available;
+    // }
+}

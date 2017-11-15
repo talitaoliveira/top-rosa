@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Top Rosa</title>
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon">    
+
+    <!-- Fontawesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+    <script type="text/javascript">
+		$(document).ready(function($) {
+			$(".list-item__link").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top - 50}, 1500);
+			});
+		});
+	</script>
+</head>
+<body>
+    <header class="header">
+        <div class="btn-menu">
+            <a href="#" class="icon-menu">
+                <span></span>
+            </a>
+        </div>
+        <nav class="header__nav menu-list">
+            <ul class="nav__list">
+                <li class="nav__list-item menu-item">
+                    <a href="#home" class="list-item__link">Home</a>
+                </li>
+                <li class="nav__list-item menu-item">
+                    <a href="#quem-somos" class="list-item__link">Quem Somos</a>
+                </li>
+                <li class="nav__list-item menu-item">
+                    <a href="#nosso-instagram" class="list-item__link">Nosso Instagram</a>
+                </li>
+                <li class="nav__list-item menu-item">
+                    <a href="#redes-sociais" class="list-item__link">Redes Sociais</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>Correr de Top Rosa</h1>
+        
+    </header>
+    
+    <main class="container main">
+        <section id="home" class="main__section main__section--home">
+            <img src="img/top-rosa.png" alt="">
+        </section>
+        <section id="quem-somos" class="main__section main__section--quem-somos">
+            <h2>Quem Somos</h2>
+            <p>
+                MENINAS DO TOP ROSA <br> 
+                Amigas corredoras <br> 
+                Metas diferentes, mas um mesmo objetivo: 
+                uma vida saudável e usar aquele Top Rosa para correr! <br> 
+                #⃣ Use #correrdetoprosa
+            </p>
+            <!-- SnapWidget -->
+        </section>
+        <section id="nosso-instagram" class="main__section main__section--nosso-instagram">
+            <h2>Ultimas fotos do nosso instagram<br> @correrdetoprosa</h2>
+                <iframe src="https://snapwidget.com/embed/469026" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+        </section>
+        <section id="redes-sociais" class="main__section main__section--redes-sociais">
+            <h2>Siga-nos</h2>
+            <div class="block__social">
+                <a href="https://www.instagram.com/correrdetoprosa" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/correrdetoprosa/" target="_blank">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+             © Copyright 2017, Correr de Top Rosa - All right reserved.
+        </p>
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
