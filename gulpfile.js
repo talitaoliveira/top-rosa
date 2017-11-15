@@ -10,7 +10,7 @@ console.log('chamando sass');
 gulp.src('./src/css/style.scss')
             .pipe(sass().on('error', sass.logError))
             .pipe(minifycss())
-            .pipe(gulp.dest('./dist/css'))
+            .pipe(gulp.dest('./dist/css/'))
             .pipe(browserSync.stream());
 });
 
@@ -26,7 +26,7 @@ gulp.src('./src/html/*.html')
 gulp.task('js', function (){
 console.log('salvando js');
 gulp.src('./src/js/*.js')
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('./dist/js/'))
     .pipe(browserSync.stream());
 });
 
@@ -34,19 +34,25 @@ gulp.src('./src/js/*.js')
 gulp.task('img', function (){
 console.log('salvando img');
 gulp.src('./src/img/*')
-    .pipe(gulp.dest('./dist/img'))
+    .pipe(gulp.dest('./dist/img/'))
     .pipe(browserSync.stream());
 });
 
-gulp.task('serve',['sass'] , function () {
-browserSync.init({
-    server: {
-        baseDir: "./dist"
-    }
+gulp.task('serve',['sass', 'js'] , function () {
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        }
+    });
+
+    
 });
 
-gulp.watch("./src/*").on("change", browserSync.reload);
-gulp.watch('./src/style.scss', ['sass']);
-});
+gulp.task('watch', function(){
+    gulp.watch("./src/**/*.*").on("change", browserSync.reload);
+    gulp.watch('./src/css/style.scss', ['sass']);
+    gulp.watch('./src/js/script.js', ['js']);
+    gulp.watch('./src/img/*', ['img']);
+  });
 
-gulp.task('default', ['html','sass', 'js', 'img','serve']);
+gulp.task('default', ['watch','html','sass', 'js', 'img','serve']);
