@@ -1,6 +1,4 @@
 
-
-
   // Comportamento do icone de menu mobile
   const menu_icon = document.querySelector(".icon-menu");
   const menu_list = document.querySelector(".menu-list");
