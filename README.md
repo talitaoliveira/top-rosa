@@ -3,5 +3,5 @@
 
 ## Stack
 
-- Task Runner: [Gulp] (https://gulpjs.com/)
-- CSS Preprocessor: [Sass] (http://sass-lang.com/)
+- Task Runner: [Gulp](https://gulpjs.com/)
+- CSS Preprocessor: [Sass](http://sass-lang.com/)
